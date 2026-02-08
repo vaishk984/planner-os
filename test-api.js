@@ -85,9 +85,9 @@ async function runTests() {
 
     // Events API
     console.log('--- EVENTS API ---');
-    await test('List Events', '/api/v1/events');
-    await test('Event Stats', '/api/v1/events/stats');
-    await test('Upcoming Events', '/api/v1/events/upcoming');
+    await test('List Events', '/api/v1/events', 401);
+    await test('Event Stats', '/api/v1/events/stats', 401);
+    await test('Upcoming Events', '/api/v1/events/upcoming', 401);
     console.log('');
 
     // Leads API

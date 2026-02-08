@@ -22,8 +22,8 @@ async function trialAndError() {
         .insert({ planner_id: testId, status: 'draft' })
         .select();
 
-    if (error) {
-        console.log('❌', error.message);
+    if (error || !data || data.length === 0) {
+        console.log('❌', error?.message ?? 'No data returned');
     } else {
         console.log('✅ SUCCESS!');
         console.log('Columns:', Object.keys(data[0]).join(', '));
@@ -38,8 +38,8 @@ async function trialAndError() {
         .insert({ planner_id: testId, status: 'draft', type: 'wedding' })
         .select());
 
-    if (error) {
-        console.log('❌', error.message);
+    if (error || !data || data.length === 0) {
+        console.log('❌', error?.message ?? 'No data returned');
     } else {
         console.log('✅ SUCCESS!');
         console.log('Columns:', Object.keys(data[0]).join(', '));
@@ -62,8 +62,8 @@ async function trialAndError() {
         })
         .select());
 
-    if (error) {
-        console.log('❌', error.message);
+    if (error || !data || data.length === 0) {
+        console.log('❌', error?.message ?? 'No data returned');
     } else {
         console.log('✅ SUCCESS!');
         console.log('Columns:', Object.keys(data[0]).join(', '));

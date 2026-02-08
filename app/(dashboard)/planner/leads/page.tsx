@@ -10,6 +10,8 @@ import {
 import { getLeads } from '@/actions/leads'
 import { LeadsClient } from './leads-client'
 
+export const dynamic = 'force-dynamic'
+
 export default async function LeadsPage() {
     const result = await getLeads()
 

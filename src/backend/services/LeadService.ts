@@ -63,15 +63,20 @@ export class LeadService {
     }
 
     async getByPlanner(
-        plannerId: string,
+        plannerId: string | undefined,
         query: QueryLeadsDto
     ): Promise<PaginatedResponseDto<LeadResponseDto>> {
-        const result = await this.leadRepo.findByPlannerId(plannerId, {
+        const sortBy = query.sortBy === 'createdAt' ? 'created_at' : query.sortBy;
+        const findOptions = {
             page: query.page,
             limit: query.limit,
-            sortBy: query.sortBy,
+            sortBy,
             sortOrder: query.sortOrder,
-        });
+        };
+
+        const result = plannerId
+            ? await this.leadRepo.findByPlannerId(plannerId, findOptions)
+            : await this.leadRepo.findAll(findOptions);
 
         return createPaginatedResponse(
             result.data.map(toResponseDto),

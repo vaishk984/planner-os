@@ -22,7 +22,7 @@ export class LeadController {
         const query = validateQuery(request, QueryLeadsSchema);
 
         // TODO: Get planner ID from auth context
-        const plannerId = 'demo-planner-id';
+        const plannerId = request.headers.get('x-planner-id') || undefined;
 
         const result = await leadService.getByPlanner(plannerId, query);
         return ApiResponse.paginated(result.items, result.meta);
@@ -46,7 +46,10 @@ export class LeadController {
         const body = await validateBody(request, CreateLeadSchema);
 
         // TODO: Get planner ID from auth context
-        const plannerId = 'demo-planner-id';
+        const plannerId = request.headers.get('x-planner-id');
+        if (!plannerId) {
+            return ApiResponse.error('Planner ID is required', 'MISSING_PLANNER_ID', 400);
+        }
 
         const lead = await leadService.create(body, plannerId);
         return ApiResponse.created(lead);
@@ -92,7 +95,7 @@ export class LeadController {
      */
     async getHotLeads(request: NextRequest): Promise<NextResponse> {
         // TODO: Get planner ID from auth context
-        const plannerId = 'demo-planner-id';
+        const plannerId = request.headers.get('x-planner-id') || undefined;
 
         const leads = await leadService.getHotLeads(plannerId);
         return ApiResponse.success(leads);

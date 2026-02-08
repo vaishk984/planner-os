@@ -49,7 +49,10 @@ export class TaskRepository extends BaseRepository<Task, TaskRow> {
         if (entity.priority) row.priority = entity.priority;
         if (entity.startTime !== undefined) row.start_time = entity.startTime instanceof Date ? entity.startTime.toISOString() : entity.startTime;
         if (entity.endTime !== undefined) row.end_time = entity.endTime instanceof Date ? entity.endTime.toISOString() : entity.endTime;
-        if (entity.dueDate !== undefined) row.due_date = entity.dueDate instanceof Date ? entity.dueDate.toISOString() : entity.dueDate;
+        // event_tasks doesn't have due_date in the current schema; use end_time as a fallback.
+        if (entity.dueDate !== undefined && row.end_time === undefined) {
+            row.end_time = entity.dueDate instanceof Date ? entity.dueDate.toISOString() : entity.dueDate;
+        }
         if (entity.completedAt !== undefined) row.completed_at = entity.completedAt instanceof Date ? entity.completedAt.toISOString() : entity.completedAt;
         if (entity.proofUrls) row.proof_urls = entity.proofUrls;
         if (entity.notes !== undefined) row.notes = entity.notes;
@@ -65,8 +68,16 @@ export class TaskRepository extends BaseRepository<Task, TaskRow> {
      * Find tasks by event ID
      */
     async findByEventId(eventId: string, options: FindOptions = {}): Promise<FindResult<Task>> {
-        const { page = 1, limit = 50, sortBy = 'due_date', sortOrder = 'asc' } = options;
+        const { page = 1, limit = 50, sortBy = 'end_time', sortOrder = 'asc' } = options;
         const offset = (page - 1) * limit;
+        const sortColumn =
+            sortBy === 'dueDate'
+                ? 'end_time'
+                : sortBy === 'createdAt'
+                    ? 'created_at'
+                    : sortBy === 'priority'
+                        ? 'created_at'
+                        : sortBy;
 
         const { count } = await this.supabase
             .from(this.tableName)
@@ -77,7 +88,7 @@ export class TaskRepository extends BaseRepository<Task, TaskRow> {
             .from(this.tableName)
             .select('*')
             .eq('event_id', eventId)
-            .order(sortBy, { ascending: sortOrder === 'asc' })
+            .order(sortColumn, { ascending: sortOrder === 'asc' })
             .range(offset, offset + limit - 1);
 
         if (error) {
@@ -97,8 +108,16 @@ export class TaskRepository extends BaseRepository<Task, TaskRow> {
      * Find tasks by vendor ID
      */
     async findByVendorId(vendorId: string, options: FindOptions = {}): Promise<FindResult<Task>> {
-        const { page = 1, limit = 20, sortBy = 'due_date', sortOrder = 'asc' } = options;
+        const { page = 1, limit = 20, sortBy = 'end_time', sortOrder = 'asc' } = options;
         const offset = (page - 1) * limit;
+        const sortColumn =
+            sortBy === 'dueDate'
+                ? 'end_time'
+                : sortBy === 'createdAt'
+                    ? 'created_at'
+                    : sortBy === 'priority'
+                        ? 'created_at'
+                        : sortBy;
 
         const { count } = await this.supabase
             .from(this.tableName)
@@ -109,7 +128,7 @@ export class TaskRepository extends BaseRepository<Task, TaskRow> {
             .from(this.tableName)
             .select('*')
             .eq('vendor_id', vendorId)
-            .order(sortBy, { ascending: sortOrder === 'asc' })
+            .order(sortColumn, { ascending: sortOrder === 'asc' })
             .range(offset, offset + limit - 1);
 
         if (error) {
@@ -133,7 +152,7 @@ export class TaskRepository extends BaseRepository<Task, TaskRow> {
             .from(this.tableName)
             .select('*')
             .eq('status', status)
-            .order('due_date', { ascending: true });
+            .order('end_time', { ascending: true });
 
         if (vendorId) {
             query = query.eq('vendor_id', vendorId);
@@ -158,9 +177,9 @@ export class TaskRepository extends BaseRepository<Task, TaskRow> {
         let query = this.supabase
             .from(this.tableName)
             .select('*')
-            .lt('due_date', now)
+            .lt('end_time', now)
             .not('status', 'in', '("completed","verified")')
-            .order('due_date', { ascending: true });
+            .order('end_time', { ascending: true });
 
         if (vendorId) {
             query = query.eq('vendor_id', vendorId);

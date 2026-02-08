@@ -22,6 +22,14 @@ const VENDOR_TAGS: Record<string, string[]> = {
     'entertainment': ['DJ', 'Live Band', 'Cultural', 'Bollywood'],
 }
 
+const getReviewCount = (vendorId: string) => {
+    let hash = 0
+    for (let i = 0; i < vendorId.length; i += 1) {
+        hash = (hash * 31 + vendorId.charCodeAt(i)) % 1000
+    }
+    return 50 + (hash % 200)
+}
+
 export function CategoryShowroom({
     category,
     title,
@@ -98,7 +106,7 @@ export function CategoryShowroom({
                 {vendors.map((vendor) => {
                     const isLiked = likedVendors.includes(vendor.id)
                     const tags = getVendorTags(vendor.id)
-                    const reviewCount = Math.floor(Math.random() * 200) + 50
+                    const reviewCount = getReviewCount(vendor.id)
 
                     return (
                         <button

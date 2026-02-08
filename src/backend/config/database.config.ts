@@ -4,11 +4,13 @@
  * Supabase database configuration and client setup.
  */
 
+import { env } from './env';
+
 export const DatabaseConfig = {
     supabase: {
-        url: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-        anonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
-        serviceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY || '',
+        url: env.NEXT_PUBLIC_SUPABASE_URL,
+        anonKey: env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+        serviceRoleKey: env.SUPABASE_SERVICE_ROLE_KEY,
     },
 
     // Connection pool settings (for future use)

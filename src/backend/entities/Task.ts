@@ -193,7 +193,7 @@ export class Task extends BaseEntity {
             priority: row.priority as TaskPriority || 'medium',
             startTime: row.start_time as string | undefined,
             endTime: row.end_time as string | undefined,
-            dueDate: row.due_date as string | undefined,
+            dueDate: (row.due_date as string | undefined) ?? (row.end_time as string | undefined),
             completedAt: row.completed_at as string | undefined,
             proofUrls: row.proof_urls as string[] || [],
             notes: row.notes as string | undefined,

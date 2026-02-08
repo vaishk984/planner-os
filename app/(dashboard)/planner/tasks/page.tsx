@@ -3,6 +3,8 @@ import { TasksClient } from './tasks-client'
 import { Card } from '@/components/ui/card'
 import { AlertTriangle } from 'lucide-react'
 
+export const dynamic = 'force-dynamic'
+
 export default async function TasksPage() {
     const result = await getTasks()
 

@@ -1,0 +1,1882 @@
+
+🔍 Database Connection Test
+
+==================================================
+Testing connection to: https://lhweubswsepknmpzliio.supabase.co
+
+HTTP Status: 200
+✅ Supabase connection successful!
+
+Response: {
+  swagger: '2.0',
+  info: { description: '', title: 'standard public schema', version: '14.1' },
+  host: 'lhweubswsepknmpzliio.supabase.co:443',
+  basePath: '/',
+  schemes: [ 'https' ],
+  consumes: [
+    'application/json',
+    'application/vnd.pgrst.object+json;nulls=stripped',
+    'application/vnd.pgrst.object+json',
+    'text/csv'
+  ],
+  produces: [
+    'application/json',
+    'application/vnd.pgrst.object+json;nulls=stripped',
+    'application/vnd.pgrst.object+json',
+    'text/csv'
+  ],
+  paths: {
+    '/': { get: [Object] },
+    '/vendor_services': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/payments': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/event_concepts': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/budget_items': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/vendor_packages': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/vendor_payouts': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/vendors': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/event_requirements': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/event_intakes': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/leads': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/event_tasks': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/revision_requests': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/checklist_items': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/proof_of_work': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/clients': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/guests': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/tasks': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/booking_requests': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/package_templates': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/services': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/bookings': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/planner_profiles': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/lead_activities': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/vendor_performance': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/feedback': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/package_items': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/invoices': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/user_profiles': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/template_items': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/vendor_availability': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/timeline_items': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/packages': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/events': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/vendor_assignments': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/roles': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/checklists': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/event_functions': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/notifications': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/audit_logs': {
+      get: [Object],
+      post: [Object],
+      delete: [Object],
+      patch: [Object]
+    },
+    '/rpc/get_public_event': { post: [Object] },
+    '/rpc/get_user_role': { post: [Object] },
+    '/rpc/get_public_timeline': { post: [Object] },
+    '/rpc/update_proposal_status': { post: [Object] },
+    '/rpc/get_public_functions': { post: [Object] },
+    '/rpc/get_public_budget': { post: [Object] }
+  },
+  definitions: {
+    vendor_services: { required: [Array], properties: [Object], type: 'object' },
+    payments: { required: [Array], properties: [Object], type: 'object' },
+    event_concepts: { required: [Array], properties: [Object], type: 'object' },
+    budget_items: { required: [Array], properties: [Object], type: 'object' },
+    vendor_packages: { required: [Array], properties: [Object], type: 'object' },
+    vendor_payouts: { required: [Array], properties: [Object], type: 'object' },
+    vendors: { required: [Array], properties: [Object], type: 'object' },
+    event_requirements: { required: [Array], properties: [Object], type: 'object' },
+    event_intakes: { required: [Array], properties: [Object], type: 'object' },
+    leads: { required: [Array], properties: [Object], type: 'object' },
+    event_tasks: { required: [Array], properties: [Object], type: 'object' },
+    revision_requests: { required: [Array], properties: [Object], type: 'object' },
+    checklist_items: { required: [Array], properties: [Object], type: 'object' },
+    proof_of_work: { required: [Array], properties: [Object], type: 'object' },
+    clients: { required: [Array], properties: [Object], type: 'object' },
+    guests: { required: [Array], properties: [Object], type: 'object' },
+    tasks: { required: [Array], properties: [Object], type: 'object' },
+    booking_requests: { required: [Array], properties: [Object], type: 'object' },
+    package_templates: { required: [Array], properties: [Object], type: 'object' },
+    services: { required: [Array], properties: [Object], type: 'object' },
+    bookings: { required: [Array], properties: [Object], type: 'object' },
+    planner_profiles: { required: [Array], properties: [Object], type: 'object' },
+    lead_activities: { required: [Array], properties: [Object], type: 'object' },
+    vendor_performance: { required: [Array], properties: [Object], type: 'object' },
+    feedback: { required: [Array], properties: [Object], type: 'object' },
+    package_items: { required: [Array], properties: [Object], type: 'object' },
+    invoices: { required: [Array], properties: [Object], type: 'object' },
+    user_profiles: { required: [Array], properties: [Object], type: 'object' },
+    template_items: { required: [Array], properties: [Object], type: 'object' },
+    vendor_availability: { required: [Array], properties: [Object], type: 'object' },
+    timeline_items: { required: [Array], properties: [Object], type: 'object' },
+    packages: { required: [Array], properties: [Object], type: 'object' },
+    events: { required: [Array], properties: [Object], type: 'object' },
+    vendor_assignments: { required: [Array], properties: [Object], type: 'object' },
+    roles: { required: [Array], properties: [Object], type: 'object' },
+    checklists: { required: [Array], properties: [Object], type: 'object' },
+    event_functions: { required: [Array], properties: [Object], type: 'object' },
+    notifications: { required: [Array], properties: [Object], type: 'object' },
+    audit_logs: { required: [Array], properties: [Object], type: 'object' }
+  },
+  parameters: {
+    preferParams: {
+      name: 'Prefer',
+      description: 'Preference',
+      required: false,
+      in: 'header',
+      type: 'string'
+    },
+    preferReturn: {
+      name: 'Prefer',
+      description: 'Preference',
+      required: false,
+      enum: [Array],
+      in: 'header',
+      type: 'string'
+    },
+    preferCount: {
+      name: 'Prefer',
+      description: 'Preference',
+      required: false,
+      enum: [Array],
+      in: 'header',
+      type: 'string'
+    },
+    preferPost: {
+      name: 'Prefer',
+      description: 'Preference',
+      required: false,
+      enum: [Array],
+      in: 'header',
+      type: 'string'
+    },
+    select: {
+      name: 'select',
+      description: 'Filtering Columns',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    on_conflict: {
+      name: 'on_conflict',
+      description: 'On Conflict',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    order: {
+      name: 'order',
+      description: 'Ordering',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    range: {
+      name: 'Range',
+      description: 'Limiting and Pagination',
+      required: false,
+      in: 'header',
+      type: 'string'
+    },
+    rangeUnit: {
+      name: 'Range-Unit',
+      description: 'Limiting and Pagination',
+      required: false,
+      default: 'items',
+      in: 'header',
+      type: 'string'
+    },
+    offset: {
+      name: 'offset',
+      description: 'Limiting and Pagination',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    limit: {
+      name: 'limit',
+      description: 'Limiting and Pagination',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.vendor_services': {
+      name: 'vendor_services',
+      description: 'vendor_services',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.vendor_services.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_services.vendor_id': { name: 'vendor_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_services.service_id': {
+      name: 'service_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_services.price': { name: 'price', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_services.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.payments': {
+      name: 'payments',
+      description: 'payments',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.payments.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.payments.invoice_id': {
+      name: 'invoice_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.payments.method': { name: 'method', required: false, in: 'query', type: 'string' },
+    'rowFilter.payments.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.payments.transaction_ref': {
+      name: 'transaction_ref',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.payments.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.event_concepts': {
+      name: 'event_concepts',
+      description: 'event_concepts',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.event_concepts.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_concepts.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_concepts.theme': { name: 'theme', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_concepts.vision_desc': {
+      name: 'vision_desc',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_concepts.moodboard_url': {
+      name: 'moodboard_url',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_concepts.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.budget_items': {
+      name: 'budget_items',
+      description: 'budget_items',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.budget_items.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.budget_items.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.budget_items.category': { name: 'category', required: false, in: 'query', type: 'string' },
+    'rowFilter.budget_items.estimated_amount': {
+      name: 'estimated_amount',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.budget_items.actual_amount': {
+      name: 'actual_amount',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.budget_items.allocated_percent': {
+      name: 'allocated_percent',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.budget_items.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.budget_items.notes': { name: 'notes', required: false, in: 'query', type: 'string' },
+    'rowFilter.budget_items.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.budget_items.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.budget_items.description': {
+      name: 'description',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.budget_items.paid_amount': {
+      name: 'paid_amount',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.budget_items.vendor_id': { name: 'vendor_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.budget_items.booking_request_id': {
+      name: 'booking_request_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.vendor_packages': {
+      name: 'vendor_packages',
+      description: 'vendor_packages',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.vendor_packages.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_packages.vendor_id': { name: 'vendor_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_packages.name': { name: 'name', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_packages.description': {
+      name: 'description',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_packages.price': { name: 'price', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_packages.duration': { name: 'duration', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_packages.inclusions': {
+      name: 'inclusions',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_packages.is_popular': {
+      name: 'is_popular',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_packages.is_active': { name: 'is_active', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_packages.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_packages.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.vendor_payouts': {
+      name: 'vendor_payouts',
+      description: 'vendor_payouts',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.vendor_payouts.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_payouts.vendor_id': { name: 'vendor_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_payouts.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_payouts.amount': { name: 'amount', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_payouts.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_payouts.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_payouts.paid_at': { name: 'paid_at', required: false, in: 'query', type: 'string' },
+    'body.vendors': {
+      name: 'vendors',
+      description: 'vendors',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.vendors.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendors.user_id': { name: 'user_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendors.company_name': {
+      name: 'company_name',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendors.quality_score': {
+      name: 'quality_score',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendors.payout_details': {
+      name: 'payout_details',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendors.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendors.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendors.planner_id': {
+      name: 'planner_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendors.email': { name: 'email', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendors.phone': { name: 'phone', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendors.contact_name': {
+      name: 'contact_name',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendors.website': { name: 'website', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendors.category': { name: 'category', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendors.description': {
+      name: 'description',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendors.location': { name: 'location', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendors.start_price': {
+      name: 'start_price',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendors.end_price': { name: 'end_price', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendors.is_verified': {
+      name: 'is_verified',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendors.image_url': { name: 'image_url', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendors.portfolio_urls': {
+      name: 'portfolio_urls',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendors.rating': { name: 'rating', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendors.review_count': {
+      name: 'review_count',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendors.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'body.event_requirements': {
+      name: 'event_requirements',
+      description: 'event_requirements',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.event_requirements.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_requirements.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_requirements.type': { name: 'type', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_requirements.description': {
+      name: 'description',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_requirements.priority': { name: 'priority', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_requirements.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.event_intakes': {
+      name: 'event_intakes',
+      description: 'event_intakes',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.event_intakes.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_intakes.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_intakes.client_name': {
+      name: 'client_name',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_intakes.client_email': {
+      name: 'client_email',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_intakes.client_phone': {
+      name: 'client_phone',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_intakes.requirements': {
+      name: 'requirements',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_intakes.submitted_at': {
+      name: 'submitted_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_intakes.source': { name: 'source', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_intakes.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_intakes.planner_id': {
+      name: 'planner_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.leads': {
+      name: 'leads',
+      description: 'leads',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.leads.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.leads.planner_id': {
+      name: 'planner_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.leads.name': { name: 'name', required: false, in: 'query', type: 'string' },
+    'rowFilter.leads.email': { name: 'email', required: false, in: 'query', type: 'string' },
+    'rowFilter.leads.phone': { name: 'phone', required: false, in: 'query', type: 'string' },
+    'rowFilter.leads.event_type': {
+      name: 'event_type',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.leads.budget_range': {
+      name: 'budget_range',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.leads.event_date': {
+      name: 'event_date',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.leads.source': { name: 'source', required: false, in: 'query', type: 'string' },
+    'rowFilter.leads.score': { name: 'score', required: false, in: 'query', type: 'string' },
+    'rowFilter.leads.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.leads.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.leads.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.event_tasks': {
+      name: 'event_tasks',
+      description: 'event_tasks',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.event_tasks.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_tasks.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_tasks.vendor_id': { name: 'vendor_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_tasks.service_id': {
+      name: 'service_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_tasks.start_time': {
+      name: 'start_time',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_tasks.end_time': { name: 'end_time', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_tasks.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_tasks.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_tasks.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.revision_requests': {
+      name: 'revision_requests',
+      description: 'revision_requests',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.revision_requests.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.revision_requests.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.revision_requests.client_id': { name: 'client_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.revision_requests.request_text': {
+      name: 'request_text',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.revision_requests.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.revision_requests.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.revision_requests.resolved_at': {
+      name: 'resolved_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.checklist_items': {
+      name: 'checklist_items',
+      description: 'checklist_items',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.checklist_items.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.checklist_items.checklist_id': {
+      name: 'checklist_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.checklist_items.description': {
+      name: 'description',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.checklist_items.category': { name: 'category', required: false, in: 'query', type: 'string' },
+    'rowFilter.checklist_items.is_completed': {
+      name: 'is_completed',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.checklist_items.assigned_to': {
+      name: 'assigned_to',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.checklist_items.due_date': { name: 'due_date', required: false, in: 'query', type: 'string' },
+    'rowFilter.checklist_items.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.checklist_items.completed_at': {
+      name: 'completed_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.proof_of_work': {
+      name: 'proof_of_work',
+      description: 'proof_of_work',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.proof_of_work.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.proof_of_work.task_id': { name: 'task_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.proof_of_work.file_url': { name: 'file_url', required: false, in: 'query', type: 'string' },
+    'rowFilter.proof_of_work.uploaded_at': {
+      name: 'uploaded_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.clients': {
+      name: 'clients',
+      description: 'clients',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.clients.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.clients.planner_id': {
+      name: 'planner_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.clients.name': { name: 'name', required: false, in: 'query', type: 'string' },
+    'rowFilter.clients.email': { name: 'email', required: false, in: 'query', type: 'string' },
+    'rowFilter.clients.phone': { name: 'phone', required: false, in: 'query', type: 'string' },
+    'rowFilter.clients.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.clients.event_type': {
+      name: 'event_type',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.clients.event_date': {
+      name: 'event_date',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.clients.score': { name: 'score', required: false, in: 'query', type: 'string' },
+    'rowFilter.clients.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.clients.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.guests': {
+      name: 'guests',
+      description: 'guests',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.guests.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.guests.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.guests.name': { name: 'name', required: false, in: 'query', type: 'string' },
+    'rowFilter.guests.email': { name: 'email', required: false, in: 'query', type: 'string' },
+    'rowFilter.guests.phone': { name: 'phone', required: false, in: 'query', type: 'string' },
+    'rowFilter.guests.rsvp_status': {
+      name: 'rsvp_status',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.guests.dietary_preferences': {
+      name: 'dietary_preferences',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.guests.table_number': {
+      name: 'table_number',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.guests.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.guests.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.guests.category': { name: 'category', required: false, in: 'query', type: 'string' },
+    'rowFilter.guests.plus_one': { name: 'plus_one', required: false, in: 'query', type: 'string' },
+    'rowFilter.guests.plus_one_name': {
+      name: 'plus_one_name',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.tasks': {
+      name: 'tasks',
+      description: 'tasks',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.tasks.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.tasks.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.tasks.title': { name: 'title', required: false, in: 'query', type: 'string' },
+    'rowFilter.tasks.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.tasks.priority': { name: 'priority', required: false, in: 'query', type: 'string' },
+    'rowFilter.tasks.due_date': { name: 'due_date', required: false, in: 'query', type: 'string' },
+    'rowFilter.tasks.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.tasks.vendor_id': { name: 'vendor_id', required: false, in: 'query', type: 'string' },
+    'body.booking_requests': {
+      name: 'booking_requests',
+      description: 'booking_requests',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.booking_requests.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.booking_requests.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.booking_requests.vendor_id': { name: 'vendor_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.booking_requests.planner_id': {
+      name: 'planner_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.booking_requests.event_name': {
+      name: 'event_name',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.booking_requests.event_date': {
+      name: 'event_date',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.booking_requests.city': { name: 'city', required: false, in: 'query', type: 'string' },
+    'rowFilter.booking_requests.venue': { name: 'venue', required: false, in: 'query', type: 'string' },
+    'rowFilter.booking_requests.guest_count': {
+      name: 'guest_count',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.booking_requests.service': { name: 'service', required: false, in: 'query', type: 'string' },
+    'rowFilter.booking_requests.requirements': {
+      name: 'requirements',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.booking_requests.budget': { name: 'budget', required: false, in: 'query', type: 'string' },
+    'rowFilter.booking_requests.quoted_amount': {
+      name: 'quoted_amount',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.booking_requests.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.booking_requests.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.booking_requests.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.booking_requests.quoted_at': { name: 'quoted_at', required: false, in: 'query', type: 'string' },
+    'rowFilter.booking_requests.responded_at': {
+      name: 'responded_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.package_templates': {
+      name: 'package_templates',
+      description: 'package_templates',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.package_templates.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.package_templates.name': { name: 'name', required: false, in: 'query', type: 'string' },
+    'rowFilter.package_templates.event_type': {
+      name: 'event_type',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.package_templates.description': {
+      name: 'description',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.package_templates.base_price': {
+      name: 'base_price',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.package_templates.is_active': { name: 'is_active', required: false, in: 'query', type: 'string' },
+    'rowFilter.package_templates.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.package_templates.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.services': {
+      name: 'services',
+      description: 'services',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.services.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.services.name': { name: 'name', required: false, in: 'query', type: 'string' },
+    'rowFilter.services.category': { name: 'category', required: false, in: 'query', type: 'string' },
+    'rowFilter.services.base_price': {
+      name: 'base_price',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.services.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.bookings': {
+      name: 'bookings',
+      description: 'bookings',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.bookings.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.bookings.vendor_id': { name: 'vendor_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.bookings.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.bookings.date': { name: 'date', required: false, in: 'query', type: 'string' },
+    'rowFilter.bookings.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'body.planner_profiles': {
+      name: 'planner_profiles',
+      description: 'planner_profiles',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.planner_profiles.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.planner_profiles.company_name': {
+      name: 'company_name',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.planner_profiles.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.planner_profiles.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.lead_activities': {
+      name: 'lead_activities',
+      description: 'lead_activities',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.lead_activities.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.lead_activities.lead_id': { name: 'lead_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.lead_activities.activity_type': {
+      name: 'activity_type',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.lead_activities.notes': { name: 'notes', required: false, in: 'query', type: 'string' },
+    'rowFilter.lead_activities.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.vendor_performance': {
+      name: 'vendor_performance',
+      description: 'vendor_performance',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.vendor_performance.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_performance.vendor_id': { name: 'vendor_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_performance.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_performance.on_time': { name: 'on_time', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_performance.score': { name: 'score', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_performance.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.feedback': {
+      name: 'feedback',
+      description: 'feedback',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.feedback.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.feedback.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.feedback.user_id': { name: 'user_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.feedback.rating': { name: 'rating', required: false, in: 'query', type: 'string' },
+    'rowFilter.feedback.comments': { name: 'comments', required: false, in: 'query', type: 'string' },
+    'rowFilter.feedback.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.package_items': {
+      name: 'package_items',
+      description: 'package_items',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.package_items.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.package_items.package_id': {
+      name: 'package_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.package_items.name': { name: 'name', required: false, in: 'query', type: 'string' },
+    'rowFilter.package_items.description': {
+      name: 'description',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.package_items.quantity': { name: 'quantity', required: false, in: 'query', type: 'string' },
+    'rowFilter.package_items.unit_price': {
+      name: 'unit_price',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.package_items.is_optional': {
+      name: 'is_optional',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.package_items.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.invoices': {
+      name: 'invoices',
+      description: 'invoices',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.invoices.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.invoices.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.invoices.amount': { name: 'amount', required: false, in: 'query', type: 'string' },
+    'rowFilter.invoices.type': { name: 'type', required: false, in: 'query', type: 'string' },
+    'rowFilter.invoices.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.invoices.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.invoices.paid_at': { name: 'paid_at', required: false, in: 'query', type: 'string' },
+    'body.user_profiles': {
+      name: 'user_profiles',
+      description: 'user_profiles',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.user_profiles.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.user_profiles.role_id': { name: 'role_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.user_profiles.phone': { name: 'phone', required: false, in: 'query', type: 'string' },
+    'rowFilter.user_profiles.address': { name: 'address', required: false, in: 'query', type: 'string' },
+    'rowFilter.user_profiles.company_name': {
+      name: 'company_name',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.user_profiles.image_url': { name: 'image_url', required: false, in: 'query', type: 'string' },
+    'rowFilter.user_profiles.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.user_profiles.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.user_profiles.role': { name: 'role', required: false, in: 'query', type: 'string' },
+    'body.template_items': {
+      name: 'template_items',
+      description: 'template_items',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.template_items.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.template_items.template_id': {
+      name: 'template_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.template_items.service_id': {
+      name: 'service_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.template_items.quantity': { name: 'quantity', required: false, in: 'query', type: 'string' },
+    'rowFilter.template_items.is_optional': {
+      name: 'is_optional',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.template_items.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.vendor_availability': {
+      name: 'vendor_availability',
+      description: 'vendor_availability',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.vendor_availability.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_availability.vendor_id': { name: 'vendor_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_availability.date': { name: 'date', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_availability.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_availability.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.timeline_items': {
+      name: 'timeline_items',
+      description: 'timeline_items',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.timeline_items.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.timeline_items.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.timeline_items.function_id': {
+      name: 'function_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.timeline_items.start_time': {
+      name: 'start_time',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.timeline_items.end_time': { name: 'end_time', required: false, in: 'query', type: 'string' },
+    'rowFilter.timeline_items.duration': { name: 'duration', required: false, in: 'query', type: 'string' },
+    'rowFilter.timeline_items.title': { name: 'title', required: false, in: 'query', type: 'string' },
+    'rowFilter.timeline_items.description': {
+      name: 'description',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.timeline_items.location': { name: 'location', required: false, in: 'query', type: 'string' },
+    'rowFilter.timeline_items.vendor_id': { name: 'vendor_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.timeline_items.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.timeline_items.sort_order': {
+      name: 'sort_order',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.timeline_items.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.timeline_items.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.packages': {
+      name: 'packages',
+      description: 'packages',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.packages.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.packages.vendor_id': { name: 'vendor_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.packages.name': { name: 'name', required: false, in: 'query', type: 'string' },
+    'rowFilter.packages.description': {
+      name: 'description',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.packages.price': { name: 'price', required: false, in: 'query', type: 'string' },
+    'rowFilter.packages.price_unit': {
+      name: 'price_unit',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.packages.includes': { name: 'includes', required: false, in: 'query', type: 'string' },
+    'rowFilter.packages.is_customizable': {
+      name: 'is_customizable',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.packages.is_active': { name: 'is_active', required: false, in: 'query', type: 'string' },
+    'rowFilter.packages.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.packages.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.events': {
+      name: 'events',
+      description: 'events',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.events.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.events.planner_id': {
+      name: 'planner_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.client_id': { name: 'client_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.events.venue_id': { name: 'venue_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.events.type': { name: 'type', required: false, in: 'query', type: 'string' },
+    'rowFilter.events.event_date': {
+      name: 'event_date',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.guest_count': {
+      name: 'guest_count',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.budget_max': {
+      name: 'budget_max',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.events.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.event_category': {
+      name: 'event_category',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.expected_attendees': {
+      name: 'expected_attendees',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.name': { name: 'name', required: false, in: 'query', type: 'string' },
+    'rowFilter.events.feasibility_status': {
+      name: 'feasibility_status',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.estimated_cost': {
+      name: 'estimated_cost',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.budget_gap': {
+      name: 'budget_gap',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.client_name': {
+      name: 'client_name',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.client_email': {
+      name: 'client_email',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.client_phone': {
+      name: 'client_phone',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.requirements': {
+      name: 'requirements',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.date': { name: 'date', required: false, in: 'query', type: 'string' },
+    'rowFilter.events.venue_name': {
+      name: 'venue_name',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.venue_address': {
+      name: 'venue_address',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.budget': { name: 'budget', required: false, in: 'query', type: 'string' },
+    'rowFilter.events.budget_min': {
+      name: 'budget_min',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.city': { name: 'city', required: false, in: 'query', type: 'string' },
+    'rowFilter.events.venue_type': {
+      name: 'venue_type',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.is_date_flexible': {
+      name: 'is_date_flexible',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.end_date': { name: 'end_date', required: false, in: 'query', type: 'string' },
+    'rowFilter.events.notes': { name: 'notes', required: false, in: 'query', type: 'string' },
+    'rowFilter.events.source': { name: 'source', required: false, in: 'query', type: 'string' },
+    'rowFilter.events.submission_id': {
+      name: 'submission_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.public_token': {
+      name: 'public_token',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.proposal_status': {
+      name: 'proposal_status',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.proposal_version': {
+      name: 'proposal_version',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.events.proposal_locked': {
+      name: 'proposal_locked',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.vendor_assignments': {
+      name: 'vendor_assignments',
+      description: 'vendor_assignments',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.vendor_assignments.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_assignments.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_assignments.function_id': {
+      name: 'function_id',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_assignments.vendor_id': { name: 'vendor_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_assignments.vendor_name': {
+      name: 'vendor_name',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_assignments.vendor_category': {
+      name: 'vendor_category',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_assignments.vendor_phone': {
+      name: 'vendor_phone',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_assignments.budget_category': {
+      name: 'budget_category',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_assignments.agreed_amount': {
+      name: 'agreed_amount',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_assignments.paid_amount': {
+      name: 'paid_amount',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_assignments.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_assignments.arrival_time': {
+      name: 'arrival_time',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_assignments.arrived_at': {
+      name: 'arrived_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_assignments.departed_at': {
+      name: 'departed_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_assignments.notes': { name: 'notes', required: false, in: 'query', type: 'string' },
+    'rowFilter.vendor_assignments.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.vendor_assignments.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.roles': {
+      name: 'roles',
+      description: 'roles',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.roles.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.roles.name': { name: 'name', required: false, in: 'query', type: 'string' },
+    'rowFilter.roles.permissions_json': {
+      name: 'permissions_json',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.roles.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.checklists': {
+      name: 'checklists',
+      description: 'checklists',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.checklists.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.checklists.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.checklists.name': { name: 'name', required: false, in: 'query', type: 'string' },
+    'rowFilter.checklists.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.event_functions': {
+      name: 'event_functions',
+      description: 'event_functions',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.event_functions.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_functions.event_id': { name: 'event_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_functions.name': { name: 'name', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_functions.type': { name: 'type', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_functions.date': { name: 'date', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_functions.start_time': {
+      name: 'start_time',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_functions.end_time': { name: 'end_time', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_functions.venue_name': {
+      name: 'venue_name',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_functions.venue_address': {
+      name: 'venue_address',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_functions.guest_count': {
+      name: 'guest_count',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_functions.budget': { name: 'budget', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_functions.notes': { name: 'notes', required: false, in: 'query', type: 'string' },
+    'rowFilter.event_functions.sort_order': {
+      name: 'sort_order',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_functions.created_at': {
+      name: 'created_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'rowFilter.event_functions.updated_at': {
+      name: 'updated_at',
+      required: false,
+      in: 'query',
+      type: 'string'
+    },
+    'body.notifications': {
+      name: 'notifications',
+      description: 'notifications',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.notifications.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.notifications.user_id': { name: 'user_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.notifications.message': { name: 'message', required: false, in: 'query', type: 'string' },
+    'rowFilter.notifications.status': { name: 'status', required: false, in: 'query', type: 'string' },
+    'rowFilter.notifications.sent_at': { name: 'sent_at', required: false, in: 'query', type: 'string' },
+    'body.audit_logs': {
+      name: 'audit_logs',
+      description: 'audit_logs',
+      required: false,
+      in: 'body',
+      schema: [Object]
+    },
+    'rowFilter.audit_logs.id': { name: 'id', required: false, in: 'query', type: 'string' },
+    'rowFilter.audit_logs.user_id': { name: 'user_id', required: false, in: 'query', type: 'string' },
+    'rowFilter.audit_logs.action': { name: 'action', required: false, in: 'query', type: 'string' },
+    'rowFilter.audit_logs.timestamp': { name: 'timestamp', required: false, in: 'query', type: 'string' }
+  },
+  externalDocs: {
+    description: 'PostgREST Documentation',
+    url: 'https://postgrest.org/en/v14/references/api.html'
+  }
+}

@@ -63,6 +63,7 @@ export class LeadRepository extends BaseRepository<Lead, LeadRow> {
     async findByPlannerId(plannerId: string, options: FindOptions = {}): Promise<FindResult<Lead>> {
         const { page = 1, limit = 20, sortBy = 'created_at', sortOrder = 'desc' } = options;
         const offset = (page - 1) * limit;
+        const sortColumn = sortBy === 'createdAt' ? 'created_at' : sortBy;
 
         const { count } = await this.supabase
             .from(this.tableName)
@@ -73,7 +74,7 @@ export class LeadRepository extends BaseRepository<Lead, LeadRow> {
             .from(this.tableName)
             .select('*')
             .eq('planner_id', plannerId)
-            .order(sortBy, { ascending: sortOrder === 'asc' })
+            .order(sortColumn, { ascending: sortOrder === 'asc' })
             .range(offset, offset + limit - 1);
 
         if (error) {
