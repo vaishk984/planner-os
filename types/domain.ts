@@ -477,6 +477,14 @@ export interface Vendor {
     city: string;
     serviceAreas: string[];
 
+    // Payment & Socials
+    paymentDetails?: {
+        bankName?: string
+        accountNumber?: string
+        ifsc?: string
+        upiId?: string
+    };
+
     // Pricing
     basePrice: number;
     priceRange: 'budget' | 'mid' | 'premium' | 'luxury';
@@ -488,13 +496,29 @@ export interface Vendor {
 
     // Media
     images: string[];
-    portfolioUrl?: string;
+    portfolio: string[]; // Mapped from portfolio_urls
+    portfolioUrl?: string; // Legacy field?
+
 
     // Status
     isVerified: boolean;
     isActive: boolean;
 
     // Timestamps
+    createdAt: string;
+    updatedAt: string;
+}
+
+export interface VendorPackage {
+    id: string;
+    vendorId: string;
+    name: string;
+    description?: string;
+    price: number;
+    duration?: string;
+    inclusions: string[];
+    isPopular: boolean;
+    isActive: boolean;
     createdAt: string;
     updatedAt: string;
 }

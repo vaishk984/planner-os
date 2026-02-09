@@ -8,7 +8,7 @@ import { BaseRepository } from './BaseRepository';
 import { Message, MessageRow } from '../entities';
 
 export class MessageRepository extends BaseRepository<Message, MessageRow> {
-    protected tableName = 'messages';
+    protected tableName = 'booking_messages';
     protected entityName = 'Message';
 
     protected toEntity(row: MessageRow): Message {

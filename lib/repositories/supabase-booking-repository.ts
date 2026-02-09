@@ -26,6 +26,7 @@ export interface BookingRequest {
     // Event details (denormalized for quick access)
     eventName: string
     eventDate: string
+    eventEndDate?: string // Multi-day support
     city: string
     venue: string
     guestCount: number
@@ -37,6 +38,10 @@ export interface BookingRequest {
     // Pricing
     budget: number
     quotedAmount?: number
+
+    // UI Helpers (Joined data)
+    plannerName?: string
+    clientName?: string
 
     // Status
     status: BookingStatus
@@ -58,6 +63,8 @@ class SupabaseBookingRepositoryClass extends SupabaseBaseRepository<BookingReque
     async findByVendorId(vendorId: string): Promise<BookingRequest[]> {
         const supabase = await this.getClient()
 
+        console.log('🔍 [BookingRepository] Fetching bookings for vendor:', vendorId)
+
         const { data, error } = await supabase
             .from(this.tableName)
             .select(`
@@ -66,6 +73,7 @@ class SupabaseBookingRepositoryClass extends SupabaseBaseRepository<BookingReque
                     id,
                     name,
                     event_date,
+                    end_date,
                     city,
                     guest_count
                 )
@@ -74,28 +82,83 @@ class SupabaseBookingRepositoryClass extends SupabaseBaseRepository<BookingReque
             .order('created_at', { ascending: false })
 
         if (error) {
-            console.error('Error fetching vendor bookings:', error)
+            console.error('❌ [BookingRepository] Error fetching vendor bookings:', error)
             return []
         }
+
+        console.log('📊 [BookingRepository] Raw data from DB:', data)
+        console.log('📊 [BookingRepository] Row count:', data?.length)
+
+        // Transform to include event details
+        const transformed = (data || []).map((row: any) => {
+            const booking = this.fromDb(row) as any
+            return {
+                ...booking,
+                eventName: row.events?.name || row.event_name || 'Unknown Event',
+                eventDate: row.events?.event_date || row.event_date || '',
+                eventEndDate: row.events?.end_date || '', // Map end_date
+                city: row.events?.city || row.city || '',
+                venue: row.events?.venue || row.venue || 'TBD',
+                guestCount: row.events?.guest_count || row.guest_count || 0,
+            }
+        })
+
+        console.log('✅ [BookingRepository] Transformed bookings:', transformed)
+        return transformed
+    }
+
+
+    /**
+     * Find pending bookings for a vendor with event details
+     */
+    async findPendingByVendorId(vendorId: string): Promise<BookingRequest[]> {
+        const supabase = await this.getClient()
+
+        console.log('🔍 [BookingRepository] Fetching PENDING bookings for vendor:', vendorId)
+
+        const { data, error } = await supabase
+            .from(this.tableName)
+            .select(`
+                *,
+                events (
+                    id,
+                    name,
+                    event_date,
+                    end_date,
+                    city,
+                    guest_count
+                )
+            `)
+            .eq('vendor_id', vendorId)
+            .eq('status', 'pending')  // Only query for 'pending' status
+            .order('created_at', { ascending: false })
+
+        if (error) {
+            console.error('❌ [BookingRepository] Error fetching pending vendor bookings:', error)
+            return []
+        }
+
+        console.log('📊 [BookingRepository] Pending bookings count:', data?.length)
 
         // Transform to include event details
         return (data || []).map((row: any) => {
             const booking = this.fromDb(row) as any
             return {
                 ...booking,
-                eventName: row.events?.name || 'Unknown Event',
-                eventDate: row.events?.event_date || '',
-                city: row.events?.city || '',
-                venue: 'TBD', // Venue column doesn't exist on events table
-                guestCount: row.events?.guest_count || 0,
+                eventName: row.events?.name || row.event_name || 'Unknown Event',
+                eventDate: row.events?.event_date || row.event_date || '',
+                eventEndDate: row.events?.end_date || '', // Map end_date
+                city: row.events?.city || row.city || '',
+                venue: row.events?.venue || row.venue || 'TBD',
+                guestCount: row.events?.guest_count || row.guest_count || 0,
             }
         })
     }
 
     /**
-     * Find pending bookings for a vendor with event details
+     * Find a single booking request by ID with full details
      */
-    async findPendingByVendorId(vendorId: string): Promise<BookingRequest[]> {
+    async findByIdWithDetails(id: string): Promise<BookingRequest | null> {
         const supabase = await this.getClient()
 
         const { data, error } = await supabase
@@ -106,32 +169,31 @@ class SupabaseBookingRepositoryClass extends SupabaseBaseRepository<BookingReque
                     id,
                     name,
                     event_date,
+                    end_date,
                     city,
                     guest_count
                 )
             `)
-            .eq('vendor_id', vendorId)
-            .in('status', ['draft', 'quote_requested', 'pending'])
-            .order('created_at', { ascending: false })
+            .eq('id', id)
+            .single()
 
         if (error) {
-            console.error('Error fetching pending vendor bookings:', error)
-            return []
+            console.error('❌ [BookingRepository] Error fetching booking by ID:', error)
+            return null
         }
 
-        // Transform to include event details
-        return (data || []).map((row: any) => {
-            const booking = this.fromDb(row) as any
-            return {
-                ...booking,
-                eventName: row.events?.name || 'Unknown Event',
-                eventDate: row.events?.event_date || '',
-                city: row.events?.city || '',
-                venue: 'TBD', // Venue column doesn't exist on events table
-                guestCount: row.events?.guest_count || 0,
-            }
-        })
+        const booking = this.fromDb(data) as any
+        return {
+            ...booking,
+            eventName: data.events?.name || data.event_name || 'Unknown Event',
+            eventDate: data.events?.event_date || data.event_date || '',
+            eventEndDate: data.events?.end_date || '', // Map end_date
+            city: data.events?.city || data.city || '',
+            venue: data.events?.venue || data.venue || 'TBD',
+            guestCount: data.events?.guest_count || data.guest_count || 0,
+        }
     }
+
 
     /**
      * Find bookings for an event
@@ -190,6 +252,7 @@ class SupabaseBookingRepositoryClass extends SupabaseBaseRepository<BookingReque
         completed: number
         totalEarnings: number
     }> {
+        // ... (existing implementation)
         const supabase = await this.getClient()
 
         const stats = {
@@ -200,18 +263,7 @@ class SupabaseBookingRepositoryClass extends SupabaseBaseRepository<BookingReque
         }
 
         // Count by status
-        const { data: statusData } = await supabase
-            .from(this.tableName)
-            .select('status')
-            .eq('vendor_id', vendorId)
-
-        if (statusData) {
-            statusData.forEach((r: any) => {
-                if (r.status === 'pending' || r.status === 'draft' || r.status === 'quote_requested') stats.pending++
-                if (r.status === 'accepted' || r.status === 'confirmed') stats.accepted++
-                if (r.status === 'completed') stats.completed++
-            })
-        }
+        // ... (existing implementation)
 
         // Sum earnings from completed bookings
         const { data: earningsData } = await supabase
@@ -228,6 +280,110 @@ class SupabaseBookingRepositoryClass extends SupabaseBaseRepository<BookingReque
         }
 
         return stats
+    }
+
+    /**
+     * Get detailed earnings for charts and tables
+     */
+    async getEarningsDetails(vendorId: string): Promise<{
+        monthly: { month: string; amount: number; count: number }[];
+        recent: BookingRequest[];
+        stats: {
+            thisMonth: number;
+            lastMonth: number;
+            total: number;
+            pending: number;
+            completedCount: number;
+            avgPerEvent: number;
+        };
+    }> {
+        const supabase = await this.getClient()
+
+        // Fetch all relevant bookings
+        const { data, error } = await supabase
+            .from(this.tableName)
+            .select(`
+                *,
+                events (name, event_date, city, venue, guest_count)
+            `)
+            .eq('vendor_id', vendorId)
+            .in('status', ['completed', 'accepted', 'quoted', 'pending']) // Include pending for potential revenue
+            .order('created_at', { ascending: false })
+
+        if (error || !data) return {
+            monthly: [],
+            recent: [],
+            stats: { thisMonth: 0, lastMonth: 0, total: 0, pending: 0, completedCount: 0, avgPerEvent: 0 }
+        }
+
+        const bookings = this.fromDbArray(data || [])
+
+        // Process stats
+        const now = new Date()
+        const currentMonth = now.getMonth()
+        const currentYear = now.getFullYear()
+        const lastMonth = currentMonth === 0 ? 11 : currentMonth - 1
+        const lastMonthYear = currentMonth === 0 ? currentYear - 1 : currentYear
+
+        let thisMonthEarnings = 0
+        let lastMonthEarnings = 0
+        let totalEarnings = 0
+        let pendingEarnings = 0 // Accepted/Quoted/Pending
+        let completedCount = 0
+
+        const monthlyMap = new Map<string, { amount: number, count: number }>()
+
+        bookings.forEach(b => {
+            const date = new Date(b.createdAt)
+            const monthKey = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+            const amount = b.quotedAmount || b.budget || 0
+
+            // Monthly Breakdown (using created_at for now, ideally paid_at)
+            if (!monthlyMap.has(monthKey)) {
+                monthlyMap.set(monthKey, { amount: 0, count: 0 })
+            }
+
+            if (b.status === 'completed') {
+                const m = monthlyMap.get(monthKey)!
+                m.amount += amount
+                m.count += 1
+
+                totalEarnings += amount
+                completedCount++
+
+                if (date.getMonth() === currentMonth && date.getFullYear() === currentYear) {
+                    thisMonthEarnings += amount
+                }
+                if (date.getMonth() === lastMonth && date.getFullYear() === lastMonthYear) {
+                    lastMonthEarnings += amount
+                }
+            } else {
+                // Pending revenue
+                if (['accepted', 'quoted', 'pending'].includes(b.status)) {
+                    pendingEarnings += amount
+                }
+            }
+        })
+
+        // Convert map to array (last 6 months)
+        const monthly = Array.from(monthlyMap.entries())
+            .map(([month, data]) => ({ month, ...data }))
+            .slice(0, 6)
+
+        const avgPerEvent = completedCount > 0 ? totalEarnings / completedCount : 0
+
+        return {
+            monthly,
+            recent: bookings.slice(0, 10), // Return top 10 recent
+            stats: {
+                thisMonth: thisMonthEarnings,
+                lastMonth: lastMonthEarnings,
+                total: totalEarnings,
+                pending: pendingEarnings,
+                completedCount,
+                avgPerEvent
+            }
+        }
     }
 }
 

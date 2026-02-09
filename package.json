@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:3000": "next dev -p 3000",
+    "dev:3001": "next dev -p 3001",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -29,6 +31,7 @@
     "date-fns": "^4.1.0",
     "lucide-react": "^0.562.0",
     "next": "16.1.0",
+    "postgres": "^3.4.8",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-hook-form": "^7.69.0",

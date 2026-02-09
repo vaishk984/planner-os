@@ -94,7 +94,7 @@ export async function createBookingRequest(formData: FormData) {
                 event_id: validData.eventId,
                 vendor_id: validData.vendorId,
                 planner_id: user.id,
-                service_category: validData.serviceCategory,
+                service: validData.serviceCategory, // Maps serviceCategory form field to 'service' column
                 service_details: validData.serviceDetails || null,
                 notes: validData.notes || null,
                 status: validData.status,
@@ -104,9 +104,16 @@ export async function createBookingRequest(formData: FormData) {
             .single()
 
         if (error) {
-            console.error('Error creating booking:', error)
-            return { error: 'Failed to assign vendor' }
+            console.error('❌ Error creating booking request:', error)
+            return { error: 'Failed to assign vendor: ' + error.message }
         }
+
+        console.log(`✅ [BookingAction] Booking request created!`)
+        console.log(`   - ID: ${data.id}`)
+        console.log(`   - Planner: ${user.id}`)
+        console.log(`   - Vendor ASSIGNED: ${validData.vendorId} (from form)`)
+        console.log(`   - Vendor IN DB: ${data.vendor_id}`)
+        console.log(`   - Status: ${data.status}`)
 
         revalidatePath(`/planner/events/${validData.eventId}/vendors`)
         return { success: true, data: BookingRequest.fromRow(data).toJSON() }

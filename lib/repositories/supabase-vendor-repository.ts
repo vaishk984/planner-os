@@ -41,8 +41,30 @@ class SupabaseVendorRepositoryClass extends SupabaseBaseRepository<Vendor> {
             phone: obj.phone || '',
             contactName: obj.contactName || '',
             website: obj.website || '',
-            location: obj.location || ''
+            location: obj.location || '',
+            instagram: obj.instagram || '',
+            paymentDetails: obj.paymentDetails || obj.payment_details || {},
+            portfolio: obj.portfolioUrls || obj.portfolio_urls || []
         } as Vendor
+    }
+
+    /**
+     * Map Domain entity to DB row
+     */
+    protected toDb(entity: Partial<Vendor>): any {
+        const row = super.toDb(entity)
+
+        // Custom mapping for complex fields
+        if (entity.paymentDetails) {
+            row.payment_details = entity.paymentDetails
+            delete row.paymentDetails
+        }
+        if (entity.portfolio) {
+            row.portfolio_urls = entity.portfolio
+            delete row.portfolio
+        }
+
+        return row
     }
 
     /**

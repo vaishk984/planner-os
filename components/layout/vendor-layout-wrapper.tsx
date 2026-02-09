@@ -60,15 +60,7 @@ export function VendorLayoutWrapper({
                     </div>
                 </div>
 
-                {/* Notification Banner */}
-                {!isCollapsed && (
-                    <div className="mx-4 mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
-                        <div className="flex items-center gap-2">
-                            <Bell className="w-4 h-4 text-amber-600" />
-                            <span className="text-sm font-medium text-amber-800">3 New Requests</span>
-                        </div>
-                    </div>
-                )}
+
 
                 {/* Nav Items */}
                 <nav className="flex-1 p-3 space-y-1 mt-4">

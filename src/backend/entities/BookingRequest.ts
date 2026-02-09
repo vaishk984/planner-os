@@ -35,7 +35,7 @@ export interface BookingRequestData extends BaseEntityData {
     plannerId: string;
 
     status: BookingStatus;
-    serviceCategory: string;
+    service: string; // Renamed from serviceCategory to service
     serviceDetails: string | null;
 
     quotedAmount: number | null;
@@ -59,7 +59,7 @@ export interface BookingRequestRow {
     vendor_id: string;
     planner_id: string;
     status: string;
-    service_category: string;
+    service: string;
     service_details: string | null;
     quoted_amount: number | null;
     agreed_amount: number | null;
@@ -80,7 +80,7 @@ export class BookingRequest extends BaseEntity {
     private _vendorId: string;
     private _plannerId: string;
     private _status: BookingStatus;
-    private _serviceCategory: string;
+    private _service: string; // Renamed from _serviceCategory
     private _serviceDetails: string | null;
     private _quotedAmount: number | null;
     private _agreedAmount: number | null;
@@ -113,7 +113,7 @@ export class BookingRequest extends BaseEntity {
         this._vendorId = data.vendorId;
         this._plannerId = data.plannerId;
         this._status = data.status;
-        this._serviceCategory = data.serviceCategory;
+        this._service = data.service;
         this._serviceDetails = data.serviceDetails;
         this._quotedAmount = data.quotedAmount;
         this._agreedAmount = data.agreedAmount;
@@ -132,7 +132,7 @@ export class BookingRequest extends BaseEntity {
     get vendorId(): string { return this._vendorId; }
     get plannerId(): string { return this._plannerId; }
     get status(): BookingStatus { return this._status; }
-    get serviceCategory(): string { return this._serviceCategory; }
+    get service(): string { return this._service; } // Renamed getter
     get serviceDetails(): string | null { return this._serviceDetails; }
     get quotedAmount(): number | null { return this._quotedAmount; }
     get agreedAmount(): number | null { return this._agreedAmount; }
@@ -270,7 +270,7 @@ export class BookingRequest extends BaseEntity {
             vendor_id: this._vendorId,
             planner_id: this._plannerId,
             status: this._status,
-            service_category: this._serviceCategory,
+            service: this._service,
             service_details: this._serviceDetails,
             quoted_amount: this._quotedAmount,
             agreed_amount: this._agreedAmount,
@@ -294,7 +294,7 @@ export class BookingRequest extends BaseEntity {
             vendorId: row.vendor_id,
             plannerId: row.planner_id,
             status: row.status as BookingStatus,
-            serviceCategory: row.service_category,
+            service: row.service,
             serviceDetails: row.service_details,
             quotedAmount: row.quoted_amount,
             agreedAmount: row.agreed_amount,
@@ -318,7 +318,7 @@ export class BookingRequest extends BaseEntity {
             vendorId: this._vendorId,
             plannerId: this._plannerId,
             status: this._status,
-            serviceCategory: this._serviceCategory,
+            service: this._service,
             serviceDetails: this._serviceDetails,
             quotedAmount: this._quotedAmount,
             agreedAmount: this._agreedAmount,

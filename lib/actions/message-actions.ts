@@ -7,6 +7,7 @@
 'use server'
 
 import { revalidatePath } from 'next/cache';
+import { cookies } from 'next/headers';
 
 const API_BASE = '/api/v1';
 
@@ -49,12 +50,16 @@ export interface ActionResult<T> {
 
 async function apiCall<T>(url: string, options?: RequestInit): Promise<ActionResult<T>> {
     try {
+        const cookieStore = await cookies();
+        const headers: HeadersInit = {
+            'Content-Type': 'application/json',
+            'Cookie': cookieStore.toString(),
+            ...options?.headers,
+        };
+
         const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || ''}${API_BASE}${url}`, {
             ...options,
-            headers: {
-                'Content-Type': 'application/json',
-                ...options?.headers,
-            },
+            headers,
         });
 
         const data = await res.json();

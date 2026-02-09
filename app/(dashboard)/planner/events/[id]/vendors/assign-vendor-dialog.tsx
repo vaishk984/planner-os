@@ -104,14 +104,14 @@ export function AssignVendorDialog({ eventId, availableVendors }: AssignVendorDi
 
                     <div className="space-y-2">
                         <Label htmlFor="status">Initial Status</Label>
-                        <Select name="status" defaultValue="draft">
+                        <Select name="status" defaultValue="pending">
                             <SelectTrigger>
                                 <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
-                                <SelectItem value="draft">Draft (Planning)</SelectItem>
-                                <SelectItem value="quote_requested">Quote Requested</SelectItem>
-                                <SelectItem value="confirmed">Confirmed</SelectItem>
+                                <SelectItem value="pending">Pending (Awaiting Vendor Response)</SelectItem>
+                                <SelectItem value="quoted">Quoted (Vendor Provided Quote)</SelectItem>
+                                <SelectItem value="accepted">Accepted (Confirmed)</SelectItem>
                             </SelectContent>
                         </Select>
                     </div>

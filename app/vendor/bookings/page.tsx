@@ -264,14 +264,20 @@ export default function VendorBookingsPage() {
                                                 >
                                                     <X className="w-4 h-4 mr-1" /> Decline
                                                 </Button>
+
                                             </>
                                         )}
-                                        <Button variant="outline" size="sm">
-                                            <Eye className="w-4 h-4 mr-1" /> Details
-                                        </Button>
-                                        <Button variant="outline" size="sm">
-                                            <MessageCircle className="w-4 h-4 mr-1" /> Message
-                                        </Button>
+
+                                        <Link href={`/vendor/bookings/${booking.id}`}>
+                                            <Button variant="outline" size="sm" className="w-full">
+                                                <Eye className="w-4 h-4 mr-1" /> Details
+                                            </Button>
+                                        </Link>
+                                        <Link href="/vendor/messages">
+                                            <Button variant="outline" size="sm" className="w-full">
+                                                <MessageCircle className="w-4 h-4 mr-1" /> Message
+                                            </Button>
+                                        </Link>
                                     </div>
                                 </div>
                             </CardContent>

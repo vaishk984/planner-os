@@ -55,20 +55,25 @@ export default function VendorDashboard() {
         setLoading(true)
         setError(null)
         try {
-            console.log('Loading vendor data...')
+            console.log('🔍 [VendorDashboard] Loading vendor data...')
             const [profileData, statsData, requestsData] = await Promise.all([
                 getVendorProfile(),
                 getVendorDashboardStats(),
                 getVendorBookingRequests()
             ])
-            console.log('Profile loaded:', profileData)
-            console.log('Stats loaded:', statsData)
-            console.log('Requests loaded:', requestsData)
+            console.log('✅ [VendorDashboard] Profile loaded:', profileData)
+            console.log('📊 [VendorDashboard] Stats loaded:', statsData)
+            console.log('📋 [VendorDashboard] Raw requests data:', requestsData)
+            console.log('📋 [VendorDashboard] Requests count:', requestsData?.length)
+            console.log('📋 [VendorDashboard] Requests statuses:', requestsData?.map((r: any) => r.status))
+
             setVendor(profileData)
             setStats(statsData)
             setRequests(requestsData as any || [])
+
+            console.log('🎯 [VendorDashboard] State updated')
         } catch (error) {
-            console.error('Failed to load vendor data:', error)
+            console.error('❌ [VendorDashboard] Failed to load vendor data:', error)
             setError(error instanceof Error ? error.message : 'Failed to load data')
         } finally {
             setLoading(false)
@@ -87,11 +92,13 @@ export default function VendorDashboard() {
         )
     }
 
-    const pendingRequests = requests.filter(r =>
-        r.status === 'pending' ||
-        r.status === 'draft' ||
-        r.status === 'quote_requested'
-    )
+    const pendingRequests = requests.filter(r => {
+        const isPending = r.status === 'pending'
+        console.log(`🔍 [VendorDashboard] Filtering request ${r.id}: status="${r.status}", isPending=${isPending}`)
+        return isPending
+    })
+    console.log(`📊 [VendorDashboard] Total requests: ${requests.length}, Pending: ${pendingRequests.length}`)
+
     const confirmedRequests = requests.filter(r => r.status === 'accepted')
 
     const handleAccept = async (id: string) => {

@@ -13,7 +13,7 @@ interface BookingWithVendor {
     id: string
     event_id: string
     status: string
-    service_category: string
+    service: string // Renamed from service_category
     quoted_amount: number | null
     agreed_amount: number | null
     vendors: {
@@ -85,7 +85,7 @@ export function BookingsList({ bookings, eventId }: BookingsListProps) {
                             <div className="flex items-center gap-2 mb-1">
                                 <h3 className="font-semibold text-lg">{booking.vendors.company_name}</h3>
                                 <Badge variant="outline" className="capitalize">
-                                    {booking.service_category}
+                                    {booking.service}
                                 </Badge>
                             </div>
 

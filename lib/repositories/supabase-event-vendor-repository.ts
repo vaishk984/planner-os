@@ -44,7 +44,7 @@ class SupabaseEventVendorRepositoryClass extends SupabaseBaseRepository<EventVen
             .select(`
                 id,
                 vendor_id,
-                service_category,
+                service,
                 quoted_amount,
                 status,
                 created_at,
@@ -78,13 +78,13 @@ class SupabaseEventVendorRepositoryClass extends SupabaseBaseRepository<EventVen
             id: row.id,
             eventId: eventId,
             vendorId: row.vendor_id,
-            category: row.service_category,
+            category: row.service,
             status: row.status === 'accepted' || row.status === 'confirmed' ? 'confirmed' : 'contacted', // rough mapping
             price: row.quoted_amount || 0,
             agreedAmount: row.quoted_amount || 0,
             addedAt: row.created_at,
             vendorName: row.vendors?.company_name || 'Unknown Vendor',
-            vendorCategory: row.vendors?.category || row.service_category,
+            vendorCategory: row.vendors?.category || row.service,
             vendorPhone: row.vendors?.phone
         }))
 
